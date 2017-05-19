@@ -1,30 +1,27 @@
 # PbSpinwheel
 
 PbSpinwheel is port version to Angular 2 from [spinwheel-js](https://github.com/playbasis/spinwheel-js).
+It's based on Angular 2 `2.4.0` with typescript `2.3.2` and transpire down to ES2015.
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.0.4.
+# Overview
 
-## Development server
+PbSpinwheel component uses [playbasis.js](https://github.com/playbasis/native-sdk-js) internally.  
+It accepts api-key and api-secret from element's property in Angular 2 or HTML element attribute in its template code. Then it will use those information to build Playbasis environment to be ready to utilize its API calls internally.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+It's reccommended for the app to use the same api-key, and api-secret as PbSpinwheel, although not strictly force.
 
-## Code scaffolding
+It notifies events by using `Subject` of `rxjs`.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|module`.
+# Development
 
-## Build
+Notable two commands that you might frequently use it along the development.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
+* Develop
+    Execute `npm run start` to start local http server then at the same time build project then watch for any changes. You can further develop then see result made from changes of code you added at http://localhost:3000.
 
-## Running unit tests
+* Lint
+    Execute `npm run lint` to lint the source code.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+# License
 
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-Before running the tests make sure you are serving the app via `ng serve`.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+Copyrights, Playbasis.
