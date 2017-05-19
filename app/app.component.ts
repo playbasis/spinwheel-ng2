@@ -5,7 +5,9 @@ import { PbSpinwheelComponent } from './pb-spinwheel/pb-spinwheel.component';
   selector: 'my-app',
   template: `
     <pb-spinwheel #spinwheel
-      total-spin-chance="5"
+      total-spin-chance='5'
+      api-key='2043203153'
+      api-secret='144da4c8df85b94dcdf1f228ced27a32'
       show-debug-log
     ></pb-spinwheel>
   `

@@ -1,5 +1,11 @@
-<p>
-  <strong>pb-spinwheel works!</strong><br/>
-  - showDebugLog: {{showDebugLog}}<br/>
-  - totalSpinChance: {{totalSpinChance}}
-</p>
+<div id="wrapper">
+  <div id="wheel">
+    <div id="inner-wheel" #innerwheel></div>
+    <div id="spin">
+      <div id="inner-spin"></div>
+    </div>      
+    <div id="shine"></div>
+  </div>
+  <img id="wheel-arrow" src="assets/arrow.png"/>
+</div>
+<button (click)="beginSpinWheelFlow()" id="pb-spinwheel-button">Spin</button>
