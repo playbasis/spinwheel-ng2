@@ -17,9 +17,11 @@ It notifies events by using `Subject` of `rxjs`.
 Notable two commands that you might frequently use it along the development.
 
 * Develop
+
     Execute `npm run start` to start local http server then at the same time build project then watch for any changes. You can further develop then see result made from changes of code you added at http://localhost:3000.
 
 * Lint
+
     Execute `npm run lint` to lint the source code.
 
 # License
