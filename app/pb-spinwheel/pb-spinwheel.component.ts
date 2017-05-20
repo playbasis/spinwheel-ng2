@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, ElementRef, ViewChild } from '@angular/core';
+import { Component, OnInit, Input, ElementRef, ViewChild, ViewEncapsulation } from '@angular/core';
 import { Subject } from 'rxjs/Rx';
 import * as _ from 'playbasis.js';
 
@@ -18,7 +18,8 @@ const enum PbSpinwheelErrorCode {
   selector: 'pb-spinwheel',
   moduleId: module.id,  // module.id is a key here for relative path of templateUrl, and styleUrls
   templateUrl: 'pb-spinwheel.component.html',
-  styleUrls: ['pb-spinwheel.component.css']
+  styleUrls: ['pb-spinwheel.component.css'],
+  encapsulation: ViewEncapsulation.None
 })
 export class PbSpinwheelComponent implements OnInit {
 
@@ -101,8 +102,6 @@ export class PbSpinwheelComponent implements OnInit {
 
   ngAfterViewInit() {
     this.dlog("ngAfterViewInit");
-
-
   }
 
   /**
@@ -764,7 +763,13 @@ export class PbSpinwheelComponent implements OnInit {
    * @param {number} targetDegree target rotation in degrees to rotate the wheel to
    */
   spinWheel(targetDegree: number) {
+    this.dlog("spinning wheel");
 
+    // generate random number between 1 - 360, then add to the new degree.
+    var newDegree = this._degree * (this._spinChanceSuccessCount + 1);
+    var totalDegree = newDegree + targetDegree;
+
+    this._elInnerWheel.nativeElement.style.transform = "rotate(" + totalDegree + 'deg)';
   }
 
   private _internalSuccessCallback(rewardItem: any) {
@@ -793,6 +798,6 @@ export class PbSpinwheelComponent implements OnInit {
    */
   enableSpinButton() {
     this._spinButtonDisabled = false;
-    this._elSpinwheelButton.nativeElement.disable = false;
+    this._elSpinwheelButton.nativeElement.disabled = false;
   }
 }
