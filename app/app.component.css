@@ -1,0 +1,34 @@
+.banner {
+  width: 100%;
+  box-sizing: border-box;
+  background-color: #4CAF50;
+  color: #fff;
+  text-transform: uppercase;
+  padding: 16px 24px;
+}
+.spin-chance-left-text {
+  text-align: center;
+}
+.configurations {
+  margin-top: 50px;
+}
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+.footer-wrapper {
+  margin-top: 50px;
+}
+.footer-text {
+  font-weight: 400;
+  font-style: italic;
+}

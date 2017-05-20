@@ -1,0 +1,76 @@
+<!-- you can just pay attention to only main section which is rendering pb-spinwheel -->
+<div class="banner">
+  <h2>PbSpinwheel Demo - Angular 2</h2>
+</div>
+<div>
+  <div>
+    <!-- **main section to render pb-spinwheel -->
+    <pb-spinwheel #spinwheel
+      [env-point-reward-levels]='{ "level2": 10, "level3": 30, "level4": 60 }'
+      env-target-action='click'
+      env-target-tag='spin-wheel'
+      [env-custom-param-url-values]='["spin-wheel1", "spin-wheel2", "spin-wheel3"]'
+      player-id='jontestuser'
+      [total-spin-chance]=5
+      api-key='2043203153'
+      api-secret='144da4c8df85b94dcdf1f228ced27a32'
+      show-debug-log
+    ></pb-spinwheel>
+    <!-- end of main section to render pb-spinwheel -->
+
+    <!-- additional showing current number of chance left to spin -->
+    <p class="spin-chance-left-text">Chance left to spin: <span style="font-weight: 600;">{{el_spinwheel.spinChanceLeft}}</span></p>
+    <!-- end of showing current number of chance left to spin -->
+  </div>
+
+  <!-- debug showing configuarations section -->
+  <div class="configurations">
+    <h2>Spinwheel Configurations</h2>
+    <table>
+      <tr>
+        <th>HTML Attribute</th>
+        <th>Value</th>
+      </tr>
+      <tr>
+        <td>show-debug-log</td>
+        <td>{{el_spinwheel.showDebugLog}}</td>
+      </tr>
+      <tr>
+        <td>api-key</td>
+        <td>{{el_spinwheel.apiKey}}</td>
+      </tr>
+      <tr>
+        <td>api-secret</td>
+        <td>{{el_spinwheel.apiSecret}}</td>
+      </tr>
+      <tr>
+        <td>env-point-reward-levels</td>
+        <td>&#123; level2: {{el_spinwheel.envPointRewardLevels.level2}}, level3: {{el_spinwheel.envPointRewardLevels.level3}}, level4: {{el_spinwheel.envPointRewardLevels.level4}} &#125;</td>
+      </tr>
+      <tr>
+        <td>env-target-action</td>
+        <td>{{el_spinwheel.envTargetAction}}</td>
+      </tr>
+      <tr>
+        <td>env-target-tag</td>
+        <td>{{el_spinwheel.envTargetTag}}</td>
+      </tr>
+      <tr>
+        <td>env-custom-param-url-values</td>
+        <td>{{el_spinwheel.envCustomParamUrlValues}}</td>
+      </tr>
+      <tr>
+        <td>player-id</td>
+        <td>{{el_spinwheel.playerId}}</td>
+      </tr>
+      <tr>
+        <td>total-spin-chance</td>
+        <td>{{el_spinwheel.totalSpinChance}}</td>
+      </tr>
+    </table>
+    <!-- end of debug showing configuration section-->
+    <p class="footer-text">
+      See console for detail.
+    </p>
+  </div>
+</div>
