@@ -2,9 +2,9 @@
 <div class="banner">
   <h2>PbSpinwheel Demo - Angular 2</h2>
 </div>
-<main>
+<div>
   <div>
-    <!-- main section to render pb-spinwheel -->
+    <!-- **main section to render pb-spinwheel -->
     <pb-spinwheel #spinwheel
       [env-point-reward-levels]='{ "level2": 10, "level3": 30, "level4": 60 }'
       env-target-action='click'
@@ -17,13 +17,15 @@
       show-debug-log
     ></pb-spinwheel>
     <!-- end of main section to render pb-spinwheel -->
+
+    <!-- additional showing current number of chance left to spin -->
+    <p class="spin-chance-left-text">Chance left to spin: <span style="font-weight: 600;">{{el_spinwheel.spinChanceLeft}}</span></p>
+    <!-- end of showing current number of chance left to spin -->
   </div>
 
   <!-- debug showing configuarations section -->
-  <div style="margin-top: 50px;">
-    <div style="margin-bottom: 10px;">
-      <h2>Spinwheel Configurations</h2>
-    </div>
+  <div class="configurations">
+    <h2>Spinwheel Configurations</h2>
     <table>
       <tr>
         <th>HTML Attribute</th>
@@ -66,11 +68,9 @@
         <td>{{el_spinwheel.totalSpinChance}}</td>
       </tr>
     </table>
-  </div>
-  <!-- end of debug showing configuration section-->
-  <div class="footer-wrapper">
+    <!-- end of debug showing configuration section-->
     <p class="footer-text">
       See console for detail.
     </p>
   </div>
-</main>
+</div>
