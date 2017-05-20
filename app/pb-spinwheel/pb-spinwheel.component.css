@@ -1,17 +1,17 @@
-{  margin:0; padding:0; }
+pb-spinwheel {  margin:0; padding:0; }
 
-#wrapper{ 
+pb-spinwheel #wrapper{ 
     width: 266px; 
     margin: 40px auto 30px;
     position: relative;
 }
 
-#wrapper.p{
+pb-spinwheel #wrapper.p{
   color: #000;
 }
 
 /*WHEEL*/
-#wheel{
+pb-spinwheel #wheel{
   width:250px;
   height:250px;
   border-radius:50%;  
@@ -23,7 +23,7 @@
   text-align: initial;
 }
 
-#wheel:before{
+pb-spinwheel #wheel:before{
   content:'';
   position:absolute;
   border:4px solid rgba(0,0,0,0.1);
@@ -32,7 +32,7 @@
   border-radius:50%;
   z-index:1000;   
 }
-#wrapper:before{
+pb-spinwheel #wrapper:before{
   content: '';
   position: absolute;
   
@@ -52,7 +52,7 @@
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#eeeeee', endColorstr='#cccccc',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
 }
 
-#wheel-arrow {
+pb-spinwheel #wheel-arrow {
   z-index:1000;
   width: 40px;
   left: 115px;
@@ -61,7 +61,7 @@
   position: absolute;
 }
 
-#inner-wheel{
+pb-spinwheel #inner-wheel {
     width:100%;
     height:100%;
     
@@ -72,7 +72,7 @@
     transition:         all 6s cubic-bezier(0,.99,.44,.99); 
 }
 
-#wheel div.sec{
+pb-spinwheel #wheel div.sec {
     position: absolute;
     width: 0;
     height: 0;
@@ -86,7 +86,7 @@
 }
 
 /** 4 sections **/
-#wheel div.sec.sec-4 {
+pb-spinwheel #wheel div.sec.sec-4 {
   position: absolute;
   width: 0;
   height: 0;
@@ -100,7 +100,7 @@
 }
 
 /** 5 sections **/
-#wheel div.sec.sec-5 {
+pb-spinwheel #wheel div.sec.sec-5 {
   position: absolute;
   width: 0;
   height: 0;
@@ -114,7 +114,7 @@
 }
 
 /** 6 sections **/
-#wheel div.sec.sec-6 {
+pb-spinwheel #wheel div.sec.sec-6 {
   position: absolute;
   width: 0;
   height: 0;
@@ -128,7 +128,7 @@
 }
 
 /** 7 sections **/
-#wheel div.sec.sec-7 {
+pb-spinwheel #wheel div.sec.sec-7 {
   position: absolute;
   width: 0;
   height: 0;
@@ -142,7 +142,7 @@
 }
 
 /** 8 sections **/
-#wheel div.sec.sec-8 {
+pb-spinwheel #wheel div.sec.sec-8 {
   position: absolute;
   width: 0;
   height: 0;
@@ -155,7 +155,7 @@
   opacity:1;
 }
 
-#wheel div.sec .fa{
+pb-spinwheel #wheel div.sec .fa{
     margin-top: -100px;
     color: rgba(0,0,0,0.2);
     position: relative;
@@ -168,7 +168,7 @@
     text-shadow: rgba(255, 255, 255, 0.1) 0px -1px 0px, rgba(0, 0, 0, 0.2) 0px 1px 0px;
 }
 
-#spin{
+pb-spinwheel #spin {
     width:68px;
     height:68px;
     position:absolute;
@@ -188,7 +188,7 @@
   user-select: none;   
 }
 
-#spin:after{
+pb-spinwheel #spin:after {
     content:""; 
     text-align:center;
     line-height:68px;
@@ -201,7 +201,7 @@
     display:block;
 }
 
-#inner-spin{
+pb-spinwheel #inner-spin {
     width:44px;
     height:44px;
     position:absolute;
@@ -223,15 +223,15 @@
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#eaeaea',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */    
 }
 
-#spin:active #inner-spin{
+pb-spinwheel #spin:active #inner-spin {
     box-shadow:rgba(0,0,0,0.4) 0px 0px 5px inset;
 }
 
-#spin:active:after{
+pb-spinwheel #spin:active:after {
     font-size:15px; 
 }
 
-#shine{
+pb-spinwheel #shine {
     width:250px;
     height:250px;
     position:absolute;
@@ -246,7 +246,6 @@ background: radial-gradient(ellipse at center,  rgba(255,255,255,1) 0%,rgba(255,
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#00ffffff',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
 
 opacity:0.1;
-    
 }
 
 /*ANIMATION*/
@@ -274,24 +273,24 @@ opacity:0.1;
   }
 }
 
-.spin {
+pb-spinwheel .spin {
   -webkit-animation: hh 0.1s; /* Chrome, Safari, Opera */
     animation: hh 0.1s;
 }
 
-.footer {
+pb-spinwheel .footer {
   font-family: 'Helvetica';
   color: #333;
     margin: 20px auto 0;    
     width:266px; 
     position:relative;
 }
-.flag-icon-background {
+pb-spinwheel .flag-icon-background {
   background-size: contain;
   background-position: 50%;
   background-repeat: no-repeat;
 }
-.flag-icon {
+pb-spinwheel .flag-icon {
   background-size: contain;
   background-position: 50%;
   background-repeat: no-repeat;
@@ -300,13 +299,13 @@ opacity:0.1;
   width: 1.33333333em;
   line-height: 1em;
 }
-.flag-icon:before {
+pb-spinwheel .flag-icon:before {
   content: "\00a0";
 }
-.flag-icon.flag-icon-squared {
+pb-spinwheel .flag-icon.flag-icon-squared {
   width: 1em;
 }
-button {
+pb-spinwheel button {
   display: block;
   margin: auto;
   font-size: 1.4rem;
@@ -318,7 +317,7 @@ button {
   border-color: #387ef5;
   border-width: 0px;
 }
-button:disabled {
+pb-spinwheel button:disabled {
   display: block;
   margin: auto;
   font-size: 1.4rem;
