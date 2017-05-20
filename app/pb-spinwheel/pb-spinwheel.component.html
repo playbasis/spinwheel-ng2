@@ -1,6 +1,6 @@
 <div id="wrapper">
   <div id="wheel">
-    <div id="inner-wheel" #innerwheel></div>
+    <div id="inner-wheel" #pbInnerwheel></div>
     <div id="spin">
       <div id="inner-spin"></div>
     </div>      
@@ -8,7 +8,7 @@
   </div>
   <img id="wheel-arrow" src="assets/arrow.png"/>
 </div>
-<button (click)="beginSpinWheelFlow()" id="pb-spinwheel-button">Spin</button>
+<button (click)="beginSpinWheelFlow()" id="pb-spinwheel-button" #pbSpinwheelButton>Spin</button>
 
 <!-- Debugging code to print out all setting of spinwheel -->
 <style>
@@ -51,7 +51,7 @@ tr:nth-child(even) {
 		</tr>
 		<tr>
 			<td>env-point-reward-levels</td>
-			<td>{{envPointRewardLevels}}</td>
+			<td>&#123; level2: {{envPointRewardLevels.level2}}, level3: {{envPointRewardLevels.level3}}, level4: {{envPointRewardLevels.level4}} &#125;</td>
 		</tr>
 		<tr>
 			<td>env-target-action</td>
@@ -74,5 +74,10 @@ tr:nth-child(even) {
 			<td>{{totalSpinChance}}</td>
 		</tr>
 	</table>
+</div>
+<div style="margin-top: 50px;">
+	<p align="right" style="font-weight: 400; font-style: italic;">
+  	See console for detail.
+  </p>
 </div>
 <!-- End of debugging code section -->

@@ -5,10 +5,10 @@ import { PbSpinwheelComponent } from './pb-spinwheel/pb-spinwheel.component';
   selector: 'my-app',
   template: `
     <pb-spinwheel #spinwheel
-      env-point-reward-levels='{ "level2": 10, "level3": 30, "level4": 60 }'
+      [env-point-reward-levels]='{ "level2": 10, "level3": 30, "level4": 60 }'
       env-target-action='click'
       env-target-tag='spin-wheel'
-      env-custom-param-url-values='["spin-wheel1", "spin-wheel2", "spin-wheel3"]'
+      [env-custom-param-url-values]='["spin-wheel1", "spin-wheel2", "spin-wheel3"]'
       player-id='jontestuser'
       total-spin-chance='5'
       api-key='2043203153'
