@@ -35,7 +35,6 @@ export class PbSpinwheelComponent implements OnInit {
   public spinChanceLeft: number = 1;
   public isLoaded: boolean = false;
 
-  private _isShowDebugLog: boolean = true;
   private _degree: number = 1800;
   private _kOdds: Array<number> = [0, 1, 3, 5, 7, 9, 11, 13, 15];
   private _rewards: Array<any> = [];
@@ -49,21 +48,15 @@ export class PbSpinwheelComponent implements OnInit {
   @ViewChild('pbInnerwheel') private _elInnerWheel:ElementRef;
   @ViewChild('pbSpinwheelButton') private _elSpinwheelButton:ElementRef;
 
-  @Input('player-id') playerId: string;
-  @Input('env-point-reward-levels') envPointRewardLevels: any = {level2: 10, level3: 30, level4: 60};
-  @Input('env-target-action') envTargetAction: string = 'click';
-  @Input('env-target-tag') envTargetTag: string = 'spin-wheel';
-  @Input('env-custom-param-url-values') envCustomParamUrlValues: Array<string> = ['spin-wheel1', 'spin-wheel2', 'spin-wheel3'];
-  @Input('total-spin-chance') totalSpinChance: number = 1;
-  @Input('api-key') apiKey: string;
-  @Input('api-secret') apiSecret: string;
-  @Input()
-    set showDebugLog(value: boolean) {
-      this._isShowDebugLog = value;
-    }
-    get showDebugLog(): boolean {
-      return this._isShowDebugLog;
-    }
+  @Input('player-id') public playerId: string;
+  @Input('env-point-reward-levels') public envPointRewardLevels: any = {level2: 10, level3: 30, level4: 60};
+  @Input('env-target-action') public envTargetAction: string = 'click';
+  @Input('env-target-tag') public envTargetTag: string = 'spin-wheel';
+  @Input('env-custom-param-url-values') public envCustomParamUrlValues: Array<string> = ['spin-wheel1', 'spin-wheel2', 'spin-wheel3'];
+  @Input('total-spin-chance') public totalSpinChance: number = 1;
+  @Input('api-key') public apiKey: string;
+  @Input('api-secret') public apiSecret: string;
+  @Input('show-debug-log') public showDebugLog: boolean = false;
 
   constructor() { }
 
