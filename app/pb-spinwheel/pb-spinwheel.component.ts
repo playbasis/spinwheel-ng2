@@ -1,6 +1,9 @@
 import { Component, OnInit, Input, ElementRef, ViewChild } from '@angular/core';
 import { Subject } from 'rxjs/Rx';
-import * as Playbasis from 'playbasis.js';
+import * as _ from 'playbasis.js';
+
+// to suppress tsc compilation error, and move forward
+let Playbasis: any = _;
 
 // error code used for onErrorSubject's error Object
 const enum PbSpinwheelErrorCode {
@@ -50,6 +53,8 @@ export class PbSpinwheelComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    this.dlog("ngOnInit");
+
     this.onReadySubject = new Subject();
     this.onErrorSubject = new Subject();
     this.onSuccessSubject = new Subject();
@@ -82,7 +87,7 @@ export class PbSpinwheelComponent implements OnInit {
   }
 
   ngAfterViewInit() {
-    console.log(this.elInnerWheel);
+    this.dlog("ngAfterViewInit");
   }
 
   /**
@@ -92,8 +97,26 @@ export class PbSpinwheelComponent implements OnInit {
    */
   dlog(...args : any[]) {
     if (this.showDebugLog) {
-      console.log.apply(console, arguments);
+      let length = arguments.length;
+      if (length > 0) {
+        switch(length) {
+          case 1: this._dlog("[pb-spinwheel]", arguments[0]); break;
+          case 2: this._dlog("[pb-spinwheel]", arguments[0], arguments[1]); break;
+          case 3: this._dlog("[pb-spinwheel]", arguments[0], arguments[1], arguments[2]); break;
+          case 4: this._dlog("[pb-spinwheel]", arguments[0], arguments[1], arguments[2], arguments[3]); break;
+          case 5: this._dlog("[pb-spinwheel]", arguments[0], arguments[1], arguments[2], arguments[3], arguments[4]); break;
+          case 6: this._dlog("[pb-spinwheel]", arguments[0], arguments[1], arguments[2], arguments[3], arguments[4], arguments[5]); break;
+          case 7: this._dlog("[pb-spinwheel]", arguments[0], arguments[1], arguments[2], arguments[3], arguments[4], arguments[5], arguments[6]); break;
+          case 8: this._dlog("[pb-spinwheel]", arguments[0], arguments[1], arguments[2], arguments[3], arguments[4], arguments[5], arguments[6], arguments[7]); break;
+          case 9: this._dlog("[pb-spinwheel]", arguments[0], arguments[1], arguments[2], arguments[3], arguments[4], arguments[5], arguments[6], arguments[7], arguments[8]); break;
+          case 10: this._dlog("[pb-spinwheel]", arguments[0], arguments[1], arguments[2], arguments[3], arguments[4], arguments[5], arguments[6], arguments[7], arguments[8], arguments[9]); break;
+        }
+      }
     }
+  }
+
+  private _dlog(...args : any[]) {
+    console.log.apply(console, arguments);
   }
 
   /**
