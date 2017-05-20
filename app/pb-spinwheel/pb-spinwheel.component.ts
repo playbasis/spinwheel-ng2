@@ -28,11 +28,19 @@ export class PbSpinwheelComponent implements OnInit {
   public onSuccessSubject: Subject<any>;
   public onKnownResultRewardSubject: Subject<any>;
 
-  private _isLoaded: boolean = false;
-  private _isShowDebugLog: boolean = true;
   public spinChanceLeft: number = 1;
 
-  @ViewChild('innerwheel') elInnerWheel:ElementRef;
+  private _isLoaded: boolean = false;
+  private _isShowDebugLog: boolean = true;
+  private _degree: number = 1800;
+  private _kOdds: Array<number> = [0, 1, 3, 5, 7, 9, 11, 13, 15];
+  private _rewards: Array<any> = [];
+  private _gotRewardItem: any = null;
+  private _targetSelectionIndex: number;
+  private _spinButtonDisabled: boolean = true;
+  private _kParamName: string = "url";
+  @ViewChild('innerwheel') private elInnerWheel:ElementRef;
+  private _spinChanceSuccessCount: number = 0;
 
   @Input('player-id') playerId: string;
   @Input('env-point-reward-levels') envPointRewardLevels: Object = {level2: 10, level3: 30, level4: 60};
@@ -88,6 +96,8 @@ export class PbSpinwheelComponent implements OnInit {
 
   ngAfterViewInit() {
     this.dlog("ngAfterViewInit");
+
+
   }
 
   /**

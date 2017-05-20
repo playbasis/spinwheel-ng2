@@ -9,3 +9,70 @@
   <img id="wheel-arrow" src="assets/arrow.png"/>
 </div>
 <button (click)="beginSpinWheelFlow()" id="pb-spinwheel-button">Spin</button>
+
+<!-- Debugging code to print out all setting of spinwheel -->
+<style>
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+</style>
+<div style="margin-top: 50px;">
+	<div style="margin-bottom: 10px;">
+		<h2>Spinwheel Configurations</h2>
+	</div>
+	<table>
+		<tr>
+			<th>HTML Attribute</th>
+			<th>Value</th>
+		</tr>
+		<tr>
+			<td>show-debug-log</td>
+			<td>{{showDebugLog}}</td>
+		</tr>
+		<tr>
+			<td>api-key</td>
+			<td>{{apiKey}}</td>
+		</tr>
+		<tr>
+			<td>api-secret</td>
+			<td>{{apiSecret}}</td>
+		</tr>
+		<tr>
+			<td>env-point-reward-levels</td>
+			<td>{{envPointRewardLevels}}</td>
+		</tr>
+		<tr>
+			<td>env-target-action</td>
+			<td>{{envTargetAction}}</td>
+		</tr>
+		<tr>
+			<td>env-target-tag</td>
+			<td>{{envTargetTag}}</td>
+		</tr>
+		<tr>
+			<td>env-custom-param-url-values</td>
+			<td>{{envCustomParamUrlValues}}</td>
+		</tr>
+		<tr>
+			<td>player-id</td>
+			<td>{{playerId}}</td>
+		</tr>
+		<tr>
+			<td>total-spin-chance</td>
+			<td>{{totalSpinChance}}</td>
+		</tr>
+	</table>
+</div>
+<!-- End of debugging code section -->
