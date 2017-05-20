@@ -70,6 +70,9 @@ export class PbSpinwheelComponent implements OnInit {
   ngOnInit() {
     this.dlog("ngOnInit");
 
+    // firstly disable button
+    this.disableSpinButton();
+
     this.onReadySubject = new Subject();
     this.onErrorSubject = new Subject();
     this.onSuccessSubject = new Subject();
@@ -194,8 +197,10 @@ export class PbSpinwheelComponent implements OnInit {
           // generate reward DOM
           selfObj.generateAndAddRewardHTMLElement_to_spinWheelSection();
 
-          // allow user to spin
-          selfObj._spinButtonDisabled = false;
+          // allow user to spin (if total spin chance is set propertly too)
+          if (this.spinChanceLeft > 0) {
+            selfObj.enableSpinButton();
+          }
 
           // set that it successfully loaded
           // this will mark that spin wheel is successfully loaded and will render
@@ -218,7 +223,7 @@ export class PbSpinwheelComponent implements OnInit {
     this.dlog("_spinButtonDisabled: " + this._spinButtonDisabled);
 
     if (!this._spinButtonDisabled) {
-      this._spinButtonDisabled = true;
+      this.disableSpinButton();
 
       this.executeEngineRuleToGetRewardId()
         .then((result: any) => {
@@ -254,9 +259,6 @@ export class PbSpinwheelComponent implements OnInit {
         });
 
       this.dlog("clicked to spin");
-
-      // disable button
-      this._elSpinwheelButton.nativeElement.disabled = true;
     }
   }
 
@@ -790,6 +792,15 @@ export class PbSpinwheelComponent implements OnInit {
     this.dlog("internal error callback is called with error: ", e);
     this.dlog("re-enable spin button again");
     this.enableSpinButton();
+  }
+
+  /**
+   * Programmatically disable spin button.
+   * It will disallow user to touch on it to spin the wheel.
+   */
+  disableSpinButton() {
+    this._spinButtonDisabled = true;
+    this._elSpinwheelButton.nativeElement.disabled = true;
   }
 
   /**
