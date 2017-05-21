@@ -15,7 +15,7 @@
     "label-position": true,
     "label-undefined": true,
     "max-line-length": [
-      true,
+      false,  // allowed for no limit of max length of character per line
       140
     ],
     "member-access": false,
@@ -55,7 +55,7 @@
       true,
       "check-open-brace",
       "check-catch",
-      "check-else",
+      //"check-else",   // allowed for else not to be at the same line as end of prevous curry brace
       "check-whitespace"
     ],
     "quotemark": [
